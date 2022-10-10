@@ -16,6 +16,7 @@ public class ListCommandsCommand extends Command {
     private static final String COMMAND_REMOVE_USER = "remove-user";
     private static final String COMMAND_REMOVE_ITEM = "remove-item";
     private static final String COMMAND_REMOVE_TX = "remove-tx";
+    private static final String COMMAND_EXIT = "exit";
     private static final Map<String, String> commandToDetailMap = Map.ofEntries(
             Map.entry("List all commands", COMMAND_LIST_COMMANDS),
             Map.entry("List all users", COMMAND_LIST_USERS),
@@ -28,7 +29,7 @@ public class ListCommandsCommand extends Command {
             Map.entry("Add a transaction", COMMAND_ADD_TX),
             Map.entry("Remove a user", COMMAND_REMOVE_USER),
             Map.entry("Remove a item", COMMAND_REMOVE_ITEM),
-            Map.entry("Remove a transaction", COMMAND_REMOVE_TX));
+            Map.entry("Remove a transaction", COMMAND_REMOVE_TX), Map.entry("Exit", COMMAND_EXIT));
 
     public boolean executeCommand() {
         for (Map.Entry<String, String> entry : commandToDetailMap.entrySet()) {

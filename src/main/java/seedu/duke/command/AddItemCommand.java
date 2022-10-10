@@ -18,12 +18,13 @@ public class AddItemCommand extends Command {
 
     public boolean executeCommand() {
         // String name, int categoryNumber, double price, String ownerId
+        Integer prevItemCount = this.itemList.getListSize();
         String name = this.args[0];
         int categoryNumber = Integer.parseInt(this.args[1]);
         double price = Double.parseDouble(this.args[2]);
         String ownerId = this.args[3];
         this.itemList.addItem(new Item(name, categoryNumber, price, ownerId));
-        System.out.println(this.itemList.getListSize());
+        assert prevItemCount.equals(this.itemList.getListSize() - 1);
         return false;
     }
 }

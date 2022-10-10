@@ -2,7 +2,6 @@ package seedu.duke.command;
 
 import seedu.duke.exception.DukeException;
 import seedu.duke.exception.InsufficientArgumentsException;
-import seedu.duke.transaction.Transaction;
 import seedu.duke.transaction.TransactionList;
 
 public class RemoveTransactionCommand extends Command {

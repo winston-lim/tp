@@ -66,9 +66,12 @@ public class Transaction {
         String usersId = "BorrowerID: " + this.borrowerId + " ";
 
         if (!isFinished) {
-            String overdueDays = " (" + ChronoUnit.DAYS.between(getReturnDate(), LocalDate.now()) + "day(s) overdue";
-            String remainDays = " (" + ChronoUnit.DAYS.between(LocalDate.now(), getReturnDate()) + " day(s) remaining)";
-            String returnDate = "ReturnDate: " + getReturnDate() + (isOverdue() ? overdueDays : remainDays);
+            String overdueDays = " (" + ChronoUnit.DAYS.between(getReturnDate(), LocalDate.now())
+                    + "day(s) overdue";
+            String remainDays = " (" + ChronoUnit.DAYS.between(LocalDate.now(), getReturnDate())
+                    + " day(s) remaining)";
+            String returnDate =
+                    "ReturnDate: " + getReturnDate() + (isOverdue() ? overdueDays : remainDays);
             return transactionIcon + transactionId + itemId + usersId + returnDate;
         }
         String returnedDate = "ReturnedOn: " + DateParser.formatDateToString(returnedAt);

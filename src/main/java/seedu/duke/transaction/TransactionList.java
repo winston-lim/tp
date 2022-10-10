@@ -40,7 +40,7 @@ public class TransactionList {
     }
 
     public Transaction getTransactionById(String transactionId) throws DukeException {
-        for (Transaction transaction: transactionList) {
+        for (Transaction transaction : transactionList) {
             if (transaction.getTxId().equals(transactionId)) {
                 return transaction;
             }
@@ -55,7 +55,8 @@ public class TransactionList {
         if (transactionList.size() == 0) {
             listString.append("There is no transaction in your list right now");
         } else {
-            listString.append("Here are ").append(transactionList.size()).append(" transaction(s) in your list:");
+            listString.append("Here are ").append(transactionList.size())
+                    .append(" transaction(s) in your list:");
         }
         int index = 1;
         for (Transaction transaction : transactionList) {

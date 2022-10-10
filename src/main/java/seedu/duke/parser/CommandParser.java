@@ -3,6 +3,7 @@ package seedu.duke.parser;
 import java.util.Arrays;
 import java.util.List;
 import seedu.duke.command.Command;
+import seedu.duke.command.ExitCommand;
 import seedu.duke.command.AddItemCommand;
 import seedu.duke.command.AddTransactionCommand;
 import seedu.duke.command.AddUserCommand;
@@ -45,6 +46,7 @@ public class CommandParser {
     private static final String COMMAND_REMOVE_USER = "remove-user";
     private static final String COMMAND_REMOVE_ITEM = "remove-item";
     private static final String COMMAND_REMOVE_TX = "remove-tx";
+    private static final String COMMAND_EXIT = "exit";
 
 
     /**
@@ -113,6 +115,8 @@ public class CommandParser {
             return new RemoveItemCommand(args, itemList);
         case COMMAND_REMOVE_TX:
             return new RemoveTransactionCommand(args, txList);
+        case COMMAND_EXIT:
+            return new ExitCommand();
         default:
             throw new CommandNotFoundException();
         }
